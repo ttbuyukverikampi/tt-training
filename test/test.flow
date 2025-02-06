@@ -1,0 +1,14 @@
+nodes:
+  - name: extr-dvdrental-actor-to-hive
+    type: transfer
+    config:
+      subtype: spark
+      conf: test/conf/f_test_extr-dvdrental-actor-to-hive.json
+      source: pg_dvdrental
+      target: hive
+      source_table: public.actor
+      explain_only: false
+      empty_source_check: false
+      target_table: default.actor
+    dependsOn: []
+config: {}
