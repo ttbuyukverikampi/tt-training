@@ -1,9 +1,9 @@
 nodes:
-  - name: country-city_cnt
+  - name: country-city-cnt
     type: transform
     config:
       target: hive
-      sql_file: test/tt/sql/f_tt-flow_country-city_cnt.sql
+      sql_file: test/tt/sql/f_tt-flow_country-city-cnt.sql
       explain_only: false
     dependsOn:
       - transfer-extr-city
