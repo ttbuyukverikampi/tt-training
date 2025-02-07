@@ -1,4 +1,28 @@
 nodes:
+  - name: dim-city
+    type: scd
+    config:
+      subtype: spark
+      conf: test/conf/f_test_dim-city.json
+      target: hive
+      explain_only: false
+      source_table: default.extr_city
+      change_tolerance: 10
+      target_table: default.dim_city
+    dependsOn:
+      - extr-city
+  - name: extr-city
+    type: transfer
+    config:
+      subtype: spark
+      conf: test/conf/f_test_extr-city.json
+      source: pg_dvdrental
+      target: hive
+      source_table: public.city
+      explain_only: false
+      empty_source_check: false
+      target_table: iceberg.default.extr_city
+    dependsOn: []
   - name: extr-dvdrental-actor-to-hive
     type: transfer
     config:
