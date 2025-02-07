@@ -6,17 +6,17 @@ nodes:
       sql_file: test/tt/sql/f_tt-flow_country-city-cnt.sql
       explain_only: false
     dependsOn:
-      - transfer-extr-city
-  - name: transfer-extr-city
+      - extr-city
+  - name: extr-city
     type: transfer
     config:
       subtype: spark
-      conf: test/tt/conf/f_tt-flow_transfer-extr-city.json
+      conf: test/tt/conf/f_tt-flow_extr-city.json
       source: pg_dvdrental
       target: hive
       source_table: public.city
       explain_only: false
-      empty_source_check: true
+      empty_source_check: false
       target_table: iceberg.gbm.extr_city
     dependsOn: []
 config: {}
