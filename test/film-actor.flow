@@ -1,0 +1,35 @@
+nodes:
+  - name: extr-film
+    type: transfer
+    config:
+      subtype: spark
+      conf: test/conf/f_film-actor_extr-film.json
+      source: pg_dvdrental
+      target: hive
+      source_table: public.film
+      explain_only: false
+      empty_source_check: true
+      target_table: iceberg.gbm.extr_film
+    dependsOn: []
+  - name: extr-film-actor
+    type: transfer
+    config:
+      subtype: spark
+      conf: test/conf/f_film-actor_extr-film-actor.json
+      source: pg_dvdrental
+      target: hive
+      source_table: public.film_actor
+      explain_only: false
+      empty_source_check: true
+      target_table: iceberg.gbm.extr_film_actor
+    dependsOn: []
+  - name: transform-film-film-actor
+    type: transform
+    config:
+      target: hive
+      sql_file: test/sql/f_film-actor_transform-film-film-actor.sql
+      explain_only: false
+    dependsOn:
+      - extr-film-actor
+      - extr-film
+config: {}

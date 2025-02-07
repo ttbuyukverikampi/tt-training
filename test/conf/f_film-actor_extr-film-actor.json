@@ -1,0 +1,17 @@
+{
+  "column_mappings": [
+    {
+      "source_column": "actor_id",
+      "target_column": "actor_id"
+    },
+    {
+      "source_column": "film_id",
+      "target_column": "film_id"
+    },
+    {
+      "source_column": "last_update",
+      "target_column": "last_update"
+    }
+  ],
+  "fetch_size": 600
+}

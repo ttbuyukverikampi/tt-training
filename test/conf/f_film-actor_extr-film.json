@@ -1,0 +1,57 @@
+{
+  "column_mappings": [
+    {
+      "source_column": "film_id",
+      "target_column": "film_id"
+    },
+    {
+      "source_column": "title",
+      "target_column": "title"
+    },
+    {
+      "source_column": "description",
+      "target_column": "description"
+    },
+    {
+      "source_column": "release_year",
+      "target_column": "release_year"
+    },
+    {
+      "source_column": "language_id",
+      "target_column": "language_id"
+    },
+    {
+      "source_column": "rental_duration",
+      "target_column": "rental_duration"
+    },
+    {
+      "source_column": "rental_rate",
+      "target_column": "rental_rate"
+    },
+    {
+      "source_column": "length",
+      "target_column": "LENGTH"
+    },
+    {
+      "source_column": "replacement_cost",
+      "target_column": "replacement_cost"
+    },
+    {
+      "source_column": "rating",
+      "target_column": "rating"
+    },
+    {
+      "source_column": "last_update",
+      "target_column": "last_update"
+    },
+    {
+      "source_column": "special_features",
+      "target_column": "special_features"
+    },
+    {
+      "source_column": "fulltext",
+      "target_column": "fulltext"
+    }
+  ],
+  "fetch_size": 600
+}
