@@ -6,9 +6,9 @@ nodes:
       conf: test/conf/f_test_dim-city.json
       target: hive
       explain_only: false
-      source_table: default.extr_city
+      source_table: gbm.extr_city
       change_tolerance: 10
-      target_table: default.dim_city
+      target_table: gbm.dim_city
     dependsOn:
       - extr-city
   - name: extr-city
@@ -21,7 +21,7 @@ nodes:
       source_table: public.city
       explain_only: false
       empty_source_check: false
-      target_table: iceberg.default.extr_city
+      target_table: gbm.extr_city
     dependsOn: []
   - name: extr-dvdrental-actor-to-hive
     type: transfer
