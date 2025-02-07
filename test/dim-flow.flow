@@ -1,0 +1,26 @@
+nodes:
+  - name: dim-city
+    type: scd
+    config:
+      subtype: spark
+      conf: test/conf/f_dim-flow_dim-city.json
+      target: hive
+      explain_only: false
+      source_table: iceberg.gbm.extr_city
+      change_tolerance: '100'
+      target_table: iceberg.gbm.dim_city
+    dependsOn:
+      - extr-city
+  - name: extr-city
+    type: transfer
+    config:
+      subtype: spark
+      conf: test/conf/f_dim-flow_extr-city.json
+      source: pg_dvdrental
+      target: hive
+      source_table: public.city
+      explain_only: false
+      empty_source_check: false
+      target_table: iceberg.gbm.extr_city
+    dependsOn: []
+config: {}
