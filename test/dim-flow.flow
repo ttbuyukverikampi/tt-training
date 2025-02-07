@@ -6,7 +6,7 @@ nodes:
       conf: test/conf/f_dim-flow_dim-city.json
       target: hive
       explain_only: false
-      source_table: iceberg.gbm.extr_city
+      source_table: gbm.extr_city
       change_tolerance: '100'
       target_table: gbm.dim_city
     dependsOn:
