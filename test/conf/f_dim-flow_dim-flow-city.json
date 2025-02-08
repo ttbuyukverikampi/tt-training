@@ -17,8 +17,8 @@
     "city_id"
   ],
   "target_table_sk": "city_sk",
-  "scd_id": "gbm.dim_city",
-  "sequence_name_of_sk": "SEQ_gbm.dim_city",
+  "scd_id": "dim_city",
+  "sequence_name_of_sk": "SEQ_dim_city",
   "temp_schema": "TEMP",
   "temp_table_prefix": "SCD_LOAD_",
   "locale": "en_US",

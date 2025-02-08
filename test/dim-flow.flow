@@ -1,9 +1,9 @@
 nodes:
-  - name: dim-city
+  - name: dim-flow-city
     type: scd
     config:
       subtype: spark
-      conf: test/conf/f_dim-flow_dim-city.json
+      conf: test/conf/f_dim-flow_dim-flow-city.json
       target: hive
       explain_only: false
       source_table: gbm.extr_city
